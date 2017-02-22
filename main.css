@@ -1,0 +1,38 @@
+body {
+	font-family: Arial, sans-serif;
+	font-size: 14px;
+	background-color: white;
+}
+hr {
+	border-color: black;
+}
+
+#top-bar, form {
+	border-radius: 2px;
+	background-color: grey;
+	padding: 1px;	
+	color: black;
+	font-weight: bold;
+}
+
+.container {
+	width: 1100px;
+	height: 1100px;
+	margin: auto;
+}
+
+.block {
+	background-color: black;
+	min-width: 63px;
+	min-height: 63px;
+	border-radius: 5px;
+	display: inline-block;
+	float: right;
+	margin: 2px 2px 2px 2px;
+
+}
+
+.mouse-trail {
+	color: white;
+	background-color: red;
+}
