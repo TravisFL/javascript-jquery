@@ -1,23 +1,43 @@
-
-
 $(document).ready(function() {
-	
+	// start of the for loop
 	var block = $(".block");
 
 	for(var i=1;i<256;i++) {
 	$(".container").append(block.clone(true));
-}	
+}   //end of the for loop	
+	
+$("#clear").on("click",function() {
+	$(".container").empty();
+	$("#form").val("");
+	//$(".block").css("display", "none");
+});
 
 $("#button").on("click",function() {
-	$(".block").hide();
+	//variables to gather width
+var widthX = 1000;
+var widthY = $("#form").val();
+var width = (widthX / widthY);
+	//variables to gather height
+var heightX = 800;
+var heightY = $("#form").val();
+var height = (heightX / heightY);
+
+	// function to clone block div and append to container div
 	var boxCount = $("#form").val();
-	for(var i=1;i<boxCount;i++) {
 
-	$(".container").append(block.clone(true));
-	}
-});
+	var blockX = block.css({"width": width,"height": height});
 
-});
+	for(var i=1;i<=boxCount;i++) {
+	$(".container").append(blockX.clone(true));
+}
+
+	$(".block").mouseenter(function() {
+	var randomColorChange = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
+	$(this).css("background-color", randomColorChange);
+	});
+}); // <-- ends button on click function
+
+}); // <-- ends document.ready function
 
 //Multiple color change option
 $(".block").mouseenter(function() {
