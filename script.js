@@ -8,22 +8,26 @@ $(document).ready(function() {
 	
 $("#clear").on("click",function() {
 	$(".container").empty();
-	$("#form").val("");
-	//$(".block").css("display", "none");
+	//$("#form").val("");
+
 });
 
 $("#button").on("click",function() {
+	var box = parseInt(prompt("Enter a number from 16 - 125"));
+
 	//variables to gather width
-var widthX = 1000;
-var widthY = $("#form").val();
+var widthX = 800;
+var widthY = box;
 var width = (widthX / widthY);
 	//variables to gather height
 var heightX = 800;
-var heightY = $("#form").val();
+//var heightY = $("#form").val();
+var heightY = box;
 var height = (heightX / heightY);
 
 	// function to clone block div and append to container div
-	var boxCount = $("#form").val();
+	//var boxCount = ($("#form").val() * $("#form").val());
+	var boxCount = (box * box);
 
 	var blockX = block.css({"width": width,"height": height});
 
@@ -31,29 +35,32 @@ var height = (heightX / heightY);
 	$(".container").append(blockX.clone(true));
 }
 
+$(".block").mouseenter(function() {
+	$(this).css("background-color", "black");
+	});
+/* Multiple color change option -- Dont delete
 	$(".block").mouseenter(function() {
 	var randomColorChange = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
 	$(this).css("background-color", randomColorChange);
 	});
+*/
 }); // <-- ends button on click function
 
 }); // <-- ends document.ready function
 
-//Multiple color change option
+/* Multiple color change option -- Dont delete
 $(".block").mouseenter(function() {
 	var randomColorChange = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
 	$(this).css("background-color", randomColorChange);
 	});
+*/
 
-
-/* 1 Color change option start
+// 1 Color change option start
 $(".block").mouseenter(function() {
-	$(this).css("background-color", "red");
-	});
-$(".block").mouseleave(function() {
 	$(this).css("background-color", "black");
 	});
- 1 Color change option end */
+
+ // 1 Color change option end 
 
 
 
