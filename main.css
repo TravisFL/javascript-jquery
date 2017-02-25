@@ -1,17 +1,21 @@
 body {
 	font-family: Arial, sans-serif;
 	font-size: 14px;
-	background-color: white;
+	background-color: #ededed;
 	text-align: center;
 }
 hr {
 	border-color: black;
 }
 
+#top-bar {
+	background-color: grey;
+	width: 100%;
+}
+
 #top-bar, form {
 	border-radius: 2px;
-	background-color: grey;
-	padding: 1px;	
+	padding: 3px;	
 	color: black;
 	font-weight: bold;
 	display: inline-block;
@@ -23,14 +27,15 @@ hr {
 	width: 100%;
 	max-width: 800px;
 	max-height: 800px;
+	min-width: 800px;
+	min-height: 800px;
 	height: 100%;
 	margin: auto;
 	overflow: hidden;
 	border: 10px solid orange;
 	text-align: center;
 	font-size: 0;
-
-
+	background-color: white;
 }
 
 .block {
